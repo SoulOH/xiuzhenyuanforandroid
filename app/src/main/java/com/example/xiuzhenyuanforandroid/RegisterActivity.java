@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.xiuzhenyuanforandroid.customeView.TimingButton;
 import com.example.xiuzhenyuanforandroid.databinding.ActivityRegisterBinding;
 import com.example.xiuzhenyuanforandroid.model.User;
 import com.example.xiuzhenyuanforandroid.model.Verification;

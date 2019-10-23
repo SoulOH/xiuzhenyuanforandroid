@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.xiuzhenyuanforandroid.LoginActivity;
+import com.example.xiuzhenyuanforandroid.customeView.TimingButton;
 import com.example.xiuzhenyuanforandroid.model.User;
 import com.example.xiuzhenyuanforandroid.model.Verification;
 
@@ -61,7 +62,7 @@ public class RegisterPresenter {
             return;
         }
         if (!inputtedMessageVerificationCode.equals(messageVerificationCode)) {
-            Toast.makeText(view.getContext(), "短信验证码不正确" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(view.getContext(), "验证码错误，请重新输入" , Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -73,5 +74,8 @@ public class RegisterPresenter {
         int verificationCode = new Random().nextInt(10000);
         messageVerificationCode = String.format(Locale.getDefault(), "%04d",verificationCode);
         Toast.makeText(view.getContext(), "验证码：" + messageVerificationCode, Toast.LENGTH_SHORT).show();
+        if (view instanceof TimingButton) {
+            ((TimingButton) view).start();
+        }
     }
 }

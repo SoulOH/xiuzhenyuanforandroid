@@ -155,14 +155,16 @@
                     android:inputType="text"
                     android:text="@={verification.messageVerificationCode}"/>
 
-                <Button
+                <com.example.xiuzhenyuanforandroid.customeView.TimingButton
                     android:id="@+id/message_verification_code_send"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="end"
                     android:text="@string/get_message_verification_code"
                     android:onClick="@{registerPresenter::getMessageVerificationCode}"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    app:tb_psText="重新获取"
+                    app:tb_totalTime="60000"/>
 
             </FrameLayout>
 
